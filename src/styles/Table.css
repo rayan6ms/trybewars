@@ -1,0 +1,180 @@
+:root {
+
+  --font-family: arial , sans-serif;
+
+  --font-size: 16px;
+
+  --row-height: 45px;
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  height: 8px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+table {
+  background-color: #424242;
+  border: 1px solid #787878;
+  border-collapse: collapse;
+  color: white;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  margin: 20px auto;
+  max-height: 400px;
+  overflow: auto;
+  width: 80%;
+}
+
+.header-row {
+  background-color: #2c2c2c;
+}
+
+th, td {
+  height: var(--row-height);
+  max-width: 165px;
+  min-width: fit-content;
+  padding: 2px 10px;
+  text-align: left;
+}
+
+.td-films, .td-created, .td-edited, .td-url {
+  overflow-x: auto;
+}
+
+.table-row:nth-child( even ) {
+  background-color: #5e5e5e;
+}
+
+input, select {
+  accent-color: yellow;
+  background-color: transparent;
+  border: 1px solid #787878;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+select {
+  background-color: #121212;
+  border: none;
+  border-bottom: 2px solid #787878;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+label {
+  font-family: var(--font-family);
+}
+
+button:not( .delete-filter-button ) {
+  background-color: transparent;
+  border: 1px solid yellow;
+  border-radius: 4px;
+  color: yellow;
+  overflow: hidden;
+  position: relative;
+}
+
+.delete-filter-button {
+  background-color: transparent;
+  border: none;
+  filter: brightness(0.8);
+  padding-bottom: 5px;
+}
+
+.delete-filter-button:hover {
+  background-color: transparent;
+  filter: brightness(1.4);
+}
+
+button:not( .delete-filter-button ):after {
+  background-color: rgba(255, 255, 0, 0.3);
+  border-radius: 50%;
+  content: '';
+  height: 0;
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease-out , height 0.3s ease-out , opacity 0.3s ease-out;
+  width: 0;
+}
+
+button:not( .delete-filter-button ):hover:focus-within:after {
+  height: 150%;
+  opacity: 1;
+  width: 150%;
+}
+
+button:hover {
+  background-color: #424242;
+  cursor: pointer;
+}
+
+.name-filter {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  width: 100%;
+}
+
+.name-filter label {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family);
+  font-size: 1.6em;
+  text-align: center;
+  transform: perspective(300px) rotateX(40deg);
+}
+
+.name-filter input {
+  font-size: 0.7em;
+  height: 40px;
+  margin-top: 6px;
+  padding: 0 10px;
+  width: 300px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 70px;
+  margin: 26px auto;
+  width: 80%;
+}
+
+input:focus-visible, select:focus-visible {
+  border: 1px solid yellow;
+  outline: none;
+}
+
+.filters input:not( #ASC, #DESC ), .filters select, .filters button {
+  height: 40px;
+  min-width: fit-content;
+  padding: 0 10px;
+}
+
+.filter-info {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: var(--font-family);
+  margin: 0 auto;
+  width: 80%;
+}
+
+.filter-info-item {
+  display: flex;
+  margin: 0 10px;
+}
+
+.inputs-radio {
+  display: flex;
+  flex-direction: column;
+  min-width: 111px;
+}
